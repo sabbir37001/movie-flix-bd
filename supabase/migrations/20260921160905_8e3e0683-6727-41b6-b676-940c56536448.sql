@@ -1,0 +1,1 @@
+CREATE POLICY "Admins delete any comment" ON public.comments FOR DELETE TO authenticated USING (private.has_role(auth.uid(), 'admin'::app_role));
